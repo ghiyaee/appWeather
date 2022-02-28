@@ -11,7 +11,7 @@ const keys = '93e8b2df642d3526ce153214fc999994'
 
 async function getweather() {
     const reslw =await (await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${cityIat.value}&lon=${cityIon.value}&appid=${keys}`)).json();
-      
+      console.log(reslw);
        
     const { main: { temp }, name,weather:[{description}],wind:{speed}} = reslw
     
@@ -20,7 +20,7 @@ async function getweather() {
 
 function setin(data,data1,data2,data3) {
     city.innerHTML = `city ${data1}`;
-    desc.innerHTML = `desc ${data2}`
+    desc.innerHTML = ` ${data2}`
     temp.innerHTML =  `temp   ${ (data -273).toFixed(2)}`;
     wind.innerHTML =  `wind ${data3}`
 }
