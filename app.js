@@ -4,24 +4,38 @@ const temp = document.querySelector('#temp');
 const wind = document.querySelector('#wind');
 const search = document.querySelector('#search');
 const citys = document.querySelector('.citys');
-const city=document.querySelector('#city')
-const keys = '93e8b2df642d3526ce153214fc999994'
+const city = document.querySelector('#city');
+const keys = '93e8b2df642d3526ce153214fc999994';
+const cityArray=[]
 
 async function getweather() {
     const resultApi = await (await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citys.value}&appid=${keys}`)).json();
-    const {main:{temp},name,weather:[{description}],wind:{speed}}=resultApi
-     setWeather(temp, name, description, speed)
+    const { main: { temp }, name, weather: [{ description }], wind: { speed } } = resultApi;
+    setWeather(name, description, temp, speed);
+  
 }
 
 function setWeather(data, data1, data2, data3) {
-    city.innerHTML = `City -  ${data1}`;
-    desc.innerHTML = ` ${data2}`
-    temp.innerHTML = `Temp   ${ (data -273).toFixed(2)}`;
-    wind.innerHTML = `Wind ${data3}`
+    city.innerHTML = `City -  ${data}`;
+    desc.innerHTML = ` ${data1}`;
+    temp.innerHTML = `Temp   ${ (data2 -273).toFixed(2)}`;
+    wind.innerHTML = `Wind ${data3}`;
     citys.value = ' ';
 }
 
+function load() {
+    citys.value=JSON.parse(localStorage.getItem('city'))
+     getweather()
+}
+load();
 search.addEventListener('click', (e) => {
     getweather();
-    e.preventDefault();
+    if (cityArray == '') {
+        cityArray.push(citys.value);
+        localStorage.setItem('city', JSON.stringify(cityArray))
+    } else {
+        cityArray.pop()
+
+    }
+    // e.preventDefault();
 })
