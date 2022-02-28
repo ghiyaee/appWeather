@@ -12,24 +12,31 @@ background: #fff;
 background-image: url(./imag/imag\ weather.jpg);
 background-repeat: no-repeat;
 background-size:cover;
+
 }
 h1{
-    margin-bottom: 1rem;
+    margin-bottom: 1.1rem;
+    color:rgb(248, 240, 240);
 }
 
 .citys ,#search {
-    width: 75px;
+    width: 100px;
     height: 40px;
     text-align: center;
     border-radius: 7px;
     border: none;
-    box-shadow: 1px 2px 13px 4px rgb(228, 225, 225);
+    box-shadow: 1px 2px 13px 4px rgb(4, 83, 148);
     transition: all .5s ease-in-out;
-
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 section{
-    margin-top: 1rem;
+    margin-top: 0.6rem;
+}
+h2,h3,h4,h5{
+    font-weight: bold;
+    font-size:2rem;
 }
 @media (max-width:500px){
     #frmInt{
@@ -38,7 +45,10 @@ section{
         align-items: center;
         flex-wrap: wrap;
     }
-    #citylat , #citylon ,#search{
+    #search{
        margin: 5px;
+    }
+    h1{
+        margin-top:3.3rem;
     }
 }

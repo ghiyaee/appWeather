@@ -12,9 +12,8 @@ async function getweather() {
     const resultApi = await (await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citys.value}&appid=${keys}`)).json();
     const { main: { temp }, name, weather: [{ description }], wind: { speed } } = resultApi;
     setWeather(name, description, temp, speed);
-  
+   
 }
-
 function setWeather(data, data1, data2, data3) {
     city.innerHTML = `City -  ${data}`;
     desc.innerHTML = ` ${data1}`;
@@ -31,7 +30,7 @@ load();
 search.addEventListener('click', (e) => {
     getweather();
     if (cityArray == '') {
-        cityArray.push(citys.value);
+        cityArray.push(citys.value.trim());
         localStorage.setItem('city', JSON.stringify(cityArray))
     } else {
         cityArray.pop()
