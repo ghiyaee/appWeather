@@ -14,12 +14,24 @@ background-repeat: no-repeat;
 background-size:cover;
 
 }
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+header div p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
 h1{
     margin-bottom: 1.1rem;
     color:rgb(248, 240, 240);
 }
 
-.citys ,#search {
+.citys ,#search, #err{
     width: 100px;
     height: 40px;
     text-align: center;
@@ -29,6 +41,7 @@ h1{
     transition: all .5s ease-in-out;
     font-weight: bold;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 7px;
 }
 
 section{
@@ -47,10 +60,13 @@ h3{
     transition: all 3s ease-in-out;
 }
 h4{
-    transition: all 4s ease-in-out;
+    transition: all 3.5s ease-in-out;
 }
 h5{
-    transition: all 5s ease-in-out;
+    transition: all 4s ease-in-out;
+}
+.hiden{
+    display: none;
 }
 @media (max-width:500px){
     #frmInt{

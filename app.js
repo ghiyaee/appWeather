@@ -5,17 +5,26 @@ const wind = document.querySelector('#wind');
 const search = document.querySelector('#search');
 const citys = document.querySelector('.citys');
 const city = document.querySelector('#city');
-const keys = '93e8b2df642d3526ce153214fc999994';
 const section = [...document.querySelector('section').children];
-const cityArray=[]
+const hiden=document.querySelector('.hiden')
+const keys = '93e8b2df642d3526ce153214fc999994';
+const cityArray = [];
 load();
 
 async function getweather() {
-    const resultApi = await (await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citys.value}&appid=${keys}`)).json();
-    const { main: { temp }, name, weather: [{ description }], wind: { speed } } = resultApi;
-    setWeather(name, description, temp, speed);
-   
+    if (!citys.value == '') {
+    
+        const resultApi = await (await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citys.value}&appid=${keys}`)).json();
+        const { main: { temp }, name, weather: [{ description }], wind: { speed } } = resultApi;
+        setWeather(name, description, temp, speed);
+    }
+    else {
+       setTimeout(() => {
+        hiden.classList.remove('hiden')
+    },2000)
+    }
 }
+
 function setWeather(data, data1, data2, data3) {
     city.innerHTML = `City -  ${data}`;
     desc.innerHTML = ` ${data1}`;
@@ -38,7 +47,7 @@ search.addEventListener('click', (e) => {
         localStorage.setItem('city', JSON.stringify(cityArray))
     } else {
         cityArray.pop()
-
+        
     }
     // e.preventDefault();
 })
