@@ -22,10 +22,9 @@ function setWeather(data, data1, data2, data3) {
     temp.innerHTML = `Temp   ${ (data2 -273).toFixed(2)}`;
     wind.innerHTML = `Wind ${data3}`;
     citys.value = ' ';
-    section.forEach(p => {
-         p.style.transform = `translateX(0)`;
+    section.forEach(p=> {
+        p.style.transform = `translateX(0)`; 
     })
-    
 }
 
 function load() {
