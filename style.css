@@ -33,7 +33,7 @@ h1{
 
 .citys ,#search, #err{
     width: 100px;
-    height: 40px;
+    height: 45px;
     text-align: center;
     border-radius: 7px;
     border: none;
@@ -43,7 +43,12 @@ h1{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 7px;
 }
-
+#err{
+    width:200px ;
+    color: rgb(109, 19, 3);
+    margin-top: 1rem;
+    font-size: 20px;
+}
 section{
     margin-top: 0.6rem;
     
