@@ -9,7 +9,7 @@ text-align: center;
 min-height: 100vh;
 margin-top:10%;
 background: #fff;
-background-image: url(./imag/imag\ weather.jpg);
+background-image: url(./imag/imag\ weather\ \(1\).jpg);
 background-repeat: no-repeat;
 background-size:cover;
 
@@ -27,8 +27,9 @@ header div p{
 
 }
 h1{
-    margin-bottom: 1.1rem;
-    color:rgb(248, 240, 240);
+    margin-bottom:0.6rem;
+    color:rgb(109, 19, 3);
+   
 }
 
 .citys ,#search, #err{
